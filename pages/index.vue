@@ -1,148 +1,30 @@
 <template>
   <div>
-    <div class="loader df aic jcc">
-      <div>
-        <h1>Loading</h1>
-        <h2 class="loader--text">0%</h2>
+    <div class="intro-header">
+      <div class="intro-name">
+        <div>o</div>
+        <div>s</div>
+        <div>a</div>
+      </div>
+      <div class="intro-name">
+        <div>h</div>
+        <div>e</div>
+        <div>n</div>
+        <div>e</div>
       </div>
     </div>
-    <div class="demo-wrapper">
-      <header class="df aic jcc">
-        <div>
-          <h1>ScrollTrigger</h1>
-          <h2>demo</h2>
+    <div class="main-page">
+      <div class="first-page">
+        <Hero />
+      </div>
+      <div>
+        <Nav />
+      </div>
+      <div class="content-page">
+        <div class="pages">
+          <SectionView />
         </div>
-      </header>
-      <section class="demo-text">
-        <div class="wrapper text">ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
-      </section>
-      <section class="demo-gallery">
-        <ul class="wrapper">
-          <li>
-            <img
-              height="874"
-              src="https://source.unsplash.com/random/1240x874?sig=42"
-              width="1240"
-            />
-          </li>
-          <li>
-            <img
-              height="874"
-              src="https://source.unsplash.com/random/1240x874?sig=77"
-              width="1240"
-            />
-          </li>
-          <li>
-            <img
-              height="874"
-              src="https://source.unsplash.com/random/1240x874?sig=73"
-              width="1240"
-            />
-          </li>
-          <li>
-            <img
-              height="874"
-              src="https://source.unsplash.com/random/1240x874?sig=1"
-              width="1240"
-            />
-          </li>
-        </ul>
-      </section>
-      <section class="demo-gallery">
-        <ul class="wrapper">
-          <li>
-            <img
-              height="874"
-              src="https://source.unsplash.com/random/1240x874?sig=136"
-              width="1240"
-            />
-          </li>
-          <li>
-            <img
-              height="874"
-              src="https://source.unsplash.com/random/1240x874?sig=125"
-              width="1240"
-            />
-          </li>
-          <li>
-            <img
-              height="874"
-              src="https://source.unsplash.com/random/1240x874?sig=160"
-              width="1240"
-            />
-          </li>
-          <li>
-            <img
-              height="874"
-              src="https://source.unsplash.com/random/1240x874?sig=181"
-              width="1240"
-            />
-          </li>
-        </ul>
-      </section>
-      <section class="demo-gallery">
-        <ul class="wrapper">
-          <li>
-            <img
-              height="874"
-              src="https://source.unsplash.com/random/1240x874?sig=82"
-              width="1240"
-            />
-          </li>
-          <li>
-            <img
-              height="874"
-              src="https://source.unsplash.com/random/1240x874?sig=119"
-              width="1240"
-            />
-          </li>
-          <li>
-            <img
-              height="874"
-              src="https://source.unsplash.com/random/1240x874?sig=26"
-              width="1240"
-            />
-          </li>
-          <li>
-            <img
-              height="874"
-              src="https://source.unsplash.com/random/1240x874?sig=21"
-              width="1240"
-            />
-          </li>
-        </ul>
-      </section>
-      <section class="demo-gallery">
-        <ul class="wrapper">
-          <li>
-            <img
-              height="874"
-              src="https://source.unsplash.com/random/1240x874?sig=95"
-              width="1240"
-            />
-          </li>
-          <li>
-            <img
-              height="874"
-              src="https://source.unsplash.com/random/1240x874?sig=92"
-              width="1240"
-            />
-          </li>
-          <li>
-            <img
-              height="874"
-              src="https://source.unsplash.com/random/1240x874?sig=184"
-              width="1240"
-            />
-          </li>
-        </ul>
-      </section>
-      <section class="demo-text">
-        <div class="wrapper text">ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
-      </section>
-      <footer class="df aic jcc">
-        <p>Images from <a href="https://unsplash.com/">Unsplash</a></p>
-      </footer>
+      </div>
     </div>
   </div>
 </template>
@@ -150,46 +32,78 @@
 <script setup>
 import { onMounted } from "vue";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-import imagesLoaded from "imagesloaded";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+// Register the ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
 onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger);
+  const contentHolderHeight =
+    document.querySelector(".content-page").offsetHeight;
+  const imgHolderHeight = window.innerHeight;
+  const addScrollHeight = window.innerHeight;
 
-  const images = gsap.utils.toArray("img");
-  const loader = document.querySelector(".loader--text");
-  const updateProgress = (instance) =>
-    (loader.textContent = `${Math.round(
-      (instance.progressedCount * 100) / images.length
-    )}%`);
+  const totalBody = contentHolderHeight + imgHolderHeight + addScrollHeight;
+  document.body.style.height = `${totalBody}px`;
 
-  const showDemo = () => {
-    document.body.style.overflow = "auto";
-    document.scrollingElement.scrollTo(0, 0);
-    gsap.to(document.querySelector(".loader"), { autoAlpha: 0 });
+  ScrollTrigger.create({
+    trigger: ".main-page",
+    start: "top top",
+    end: "bottom bottom",
+    onEnter: () => {
+      gsap.set(".main-page", { position: "absolute", top: "195%" });
+    },
+    onLeaveBack: () => {
+      gsap.set(".main-page", { position: "fixed", top: "0%" });
+    },
+  });
 
-    gsap.utils.toArray("section").forEach((section, index) => {
-      const w = section.querySelector(".wrapper");
-      const [x, xEnd] =
-        index % 2
-          ? ["100%", (w.scrollWidth - section.offsetWidth) * -1]
-          : [w.scrollWidth * -1, 0];
-      gsap.fromTo(
-        w,
-        { x },
-        {
-          x: xEnd,
-          scrollTrigger: {
-            trigger: section,
-            scrub: 0.5,
-          },
-        }
-      );
-    });
-  };
-  imagesLoaded(images).on("progress", updateProgress).on("always", showDemo);
+  gsap.to(".intro-header .intro-name:first-child", {
+    x: () => -innerWidth * 3,
+    scale: 10,
+    ease: "power2.inOut",
+    scrollTrigger: {
+      trigger: ".intro-header",
+      start: "top top",
+      end: `+=200%`,
+      scrub: 1,
+    },
+  });
+
+  gsap.to(".intro-header .intro-name:last-child", {
+    x: () => -innerWidth * 3,
+    scale: 10,
+    ease: "power2.inOut",
+    scrollTrigger: {
+      trigger: ".intro-header",
+      start: "top top",
+      end: `+=200%`,
+      scrub: 1,
+    },
+  });
+
+  gsap.to(".first-page", {
+    rotate: 0,
+    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+    ease: "power2.inOut",
+    scrollTrigger: {
+      trigger: ".first-page",
+      start: "top top",
+      end: `+=200%`,
+      scrub: 1,
+    },
+  });
+
+  gsap.to(".first-page div", {
+    scale: 1,
+    ease: "power2.inOut",
+    scrollTrigger: {
+      trigger: ".first-page",
+      start: "top top",
+      end: `+=200%`,
+      scrub: 1,
+    },
+  });
 });
 </script>
-
-<style>
-@import url("~/assets/css/main.css");
-</style>
+<style lang="scss" scoped></style>
