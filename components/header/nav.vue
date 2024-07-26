@@ -35,6 +35,30 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { onMounted } from "vue";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+  const nav = document.querySelector(".barra-menu");
+  gsap.to(".barra-menu", {
+    // backgroundColor: "red",
+    scrollTrigger: {
+      trigger: nav,
+      start: "top top",
+      end: "+=1",
+      onEnter: () => {
+        gsap.set(nav, { position: "fixed", top: 0, backgroundColor: "red" });
+      },
+      onLeaveBack: () => {
+        gsap.set(nav, { position: "relative", backgroundColor: "#fff" });
+      },
+    },
+  });
+});
+</script>
 
 <style lang="scss" scoped></style>
