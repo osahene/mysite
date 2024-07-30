@@ -10,8 +10,13 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/vue-fontawesome": "^3.0.6",
     "@hypernym/nuxt-gsap": "^2.4.2",
     "@nuxtjs/tailwindcss": "^6.12.1",
+    "@tsparticles/vue3": "^3.0.1",
     "gsap": "^3.12.5",
     "imagesloaded": "^5.0.0",
     "locomotive-scroll": "^4.1.4",

@@ -7,6 +7,13 @@
       <div>
         <Nav />
       </div>
+      <div>
+        <Activities />
+      </div>
+      <div>
+        <Timeline />
+      </div>
+      <div></div>
       <div class="content-page">
         <div class="pages">
           <SectionView />
