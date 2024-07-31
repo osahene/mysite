@@ -1,6 +1,6 @@
 <template>
   <section class="text-gray-600 bg-slate-800 body-font overflow-hidden">
-    <div class="absolute flex items-center pointer-events-none what-i-do">
+    <div class="absolute flex items-center pointer-events-none cert">
       <div class="head text-9xl text-slate-700 uppercase">Certifications</div>
     </div>
     <div class="container px-5 py-24 mx-auto">
@@ -116,22 +116,21 @@ onMounted(() => {
     gsap.set(article, { opacity: 0, y: 50 });
     observer.observe(article);
   });
+  gsap.fromTo(
+    ".cert",
+    { x: "100%" },
+    {
+      x: "0%",
+      scrollTrigger: {
+        trigger: ".cert",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+        reverse: true,
+      },
+    }
+  );
 });
-
-gsap.fromTo(
-  ".what-i-do",
-  { x: "100%" },
-  {
-    x: "0%",
-    scrollTrigger: {
-      trigger: ".what-i-do",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true,
-      reverse: true,
-    },
-  }
-);
 
 onBeforeUnmount(() => {
   observer.disconnect();

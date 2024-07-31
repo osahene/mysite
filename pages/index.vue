@@ -14,10 +14,9 @@
         <Timeline />
       </div>
       <div></div>
-      <div class="content-page">
-        <div class="pages">
-          <SectionView />
-        </div>
+
+      <div>
+        <showCase />
       </div>
     </div>
   </div>

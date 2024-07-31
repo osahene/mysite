@@ -16,7 +16,7 @@
         </svg>
         <img
           class="object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
-          src="@/assets/img/bg-img.jpg"
+          src="/img/bg-img.jpg"
           alt=""
         />
       </div>
