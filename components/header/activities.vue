@@ -1,9 +1,12 @@
 <template>
   <div
-    class="flex flex-col bg-slate-800 md:flex-row space-y-8 md:space-y-0 md:space-x-8"
+    class="flex flex-col h-screen bg-slate-800 md:flex-row space-y-8 md:space-y-0 md:space-x-8"
   >
+    <div class="absolute flex items-center pointer-events-none what-i-do">
+      <div class="head text-9xl text-slate-700 uppercase">What I do</div>
+    </div>
     <!-- Cube Section -->
-    <div class="flex-1 flex justify-center items-center">
+    <div class="hidden lg:flex flex-1 justify-center items-center cube-section">
       <div class="cont">
         <div class="cube">
           <div class="side"></div>
@@ -17,8 +20,8 @@
     </div>
 
     <!-- v-for Section -->
-    <div class="flex-1">
-      <div v-for="(act, i) in acts" :key="i" class="mb-4">
+    <div class="flex-1 p-8">
+      <div v-for="(act, i) in acts" :key="i" class="mb-4 act-item">
         <div
           class="p-5 rounded-b-lg before:bg-teal-600 hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0 before:block before:h-[4px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100 flex items-center space-x-4"
         >
@@ -31,7 +34,11 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const acts = ref([
   {
@@ -47,14 +54,58 @@ const acts = ref([
     cat: "Starting a new series on automobiles. ",
   },
 ]);
+
+onMounted(() => {
+  gsap.fromTo(
+    ".what-i-do",
+    { x: "100%" },
+    {
+      x: "0%",
+      scrollTrigger: {
+        trigger: ".what-i-do",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+        reverse: true,
+      },
+    }
+  );
+
+  gsap.utils.toArray(".act-item").forEach((item, i) => {
+    gsap.fromTo(
+      item,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: item,
+          start: "top bottom-=100",
+          end: "bottom top+=100",
+          scrub: true,
+          reverse: true,
+        },
+      }
+    );
+  });
+
+  //   gsap.fromTo(
+  //     ".cube-section",
+  //     { y: "100%" },
+  //     {
+  //       y: "0%",
+  //       scrollTrigger: {
+  //         trigger: ".cube-section",
+  //         start: "top bottom",
+  //         end: "bottom top",
+  //         scrub: true,
+  //         reverse: true,
+  //       },
+  //     }
+  //   );
+});
 </script>
 
 <style scoped>
-/* @property --hue {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-} */
 div {
   transform-style: preserve-3d;
   box-sizing: border-box;
@@ -70,7 +121,7 @@ div {
 }
 
 .cube {
-  width: 40vmin;
+  width: 20vmin;
   aspect-ratio: 1;
   position: relative;
   rotate: 1 1 1 45deg;
@@ -100,35 +151,35 @@ div {
 }
 
 .side:nth-of-type(1) {
-  translate: 0 0 20vmin;
+  translate: 0 0 10vmin;
 }
 
 .side:nth-of-type(2) {
   rotate: y 90deg;
-  translate: 20vmin;
+  translate: 10vmin;
   transform: rotatez(270deg);
 }
 
 .side:nth-of-type(3) {
   rotate: y 90deg;
-  translate: -20vmin;
+  translate: -10vmin;
   transform: rotatez(90deg);
 }
 
 .side:nth-of-type(4) {
   rotate: x 90deg;
-  translate: 0 20vmin;
+  translate: 0 10vmin;
   transform: rotatez(270deg);
 }
 
 .side:nth-of-type(5) {
   rotate: x 90deg;
-  translate: 0 -20vmin;
+  translate: 0 -10vmin;
   --ang: 135deg;
 }
 
 .side:nth-of-type(6) {
-  translate: 0 0 -20vmin;
+  translate: 0 0 -10vmin;
   transform: rotatez(180deg);
 }
 

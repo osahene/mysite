@@ -1,5 +1,8 @@
 <template>
-  <section class="text-gray-600 body-font overflow-hidden">
+  <section class="text-gray-600 bg-slate-800 body-font overflow-hidden">
+    <div class="absolute flex items-center pointer-events-none what-i-do">
+      <div class="head text-9xl text-slate-700 uppercase">Certifications</div>
+    </div>
     <div class="container px-5 py-24 mx-auto">
       <div class="-my-8 divide-y-2 divide-gray-100">
         <div
@@ -10,19 +13,23 @@
           <ul class="edu_body">
             <li class="edu_body_content">
               <div class="marker"></div>
-              <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-                <span class="font-semibold title-font text-gray-700">
+              <div class="md:w-100 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                <span
+                  class="font-semibold text-stone-100 title-font text-2xl text-gray-700"
+                >
                   {{ article.category }}
                 </span>
-                <span class="mt-1 text-gray-500 text-sm">{{
+                <span class="text-stone-100 mt-1 text-sm">{{
                   article.date
                 }}</span>
               </div>
               <div class="md:flex-grow">
-                <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">
+                <h2 class="text-4xl font-medium text-stone-100 title-font mb-2">
                   {{ article.title }}
                 </h2>
-                <p class="leading-relaxed">{{ article.content }}</p>
+                <p class="text-stone-100 leading-relaxed text-2xl">
+                  {{ article.content }}
+                </p>
                 <a class="text-indigo-500 inline-flex items-center mt-4">
                   Learn More
                   <svg
@@ -50,6 +57,8 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const articles = ref([
   {
@@ -108,6 +117,21 @@ onMounted(() => {
     observer.observe(article);
   });
 });
+
+gsap.fromTo(
+  ".what-i-do",
+  { x: "100%" },
+  {
+    x: "0%",
+    scrollTrigger: {
+      trigger: ".what-i-do",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+      reverse: true,
+    },
+  }
+);
 
 onBeforeUnmount(() => {
   observer.disconnect();
