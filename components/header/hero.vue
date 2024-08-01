@@ -21,17 +21,17 @@
         />
       </div>
       <div
-        class="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl"
+        ref="introText"
+        class="relative flex flex-col items-start w-full max-w-xl px-4 mx-5 md:px-0 lg:px-8 lg:max-w-screen-xl"
       >
-        <div class="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
+        <div class="mb-16 lg:my-40 lg:max-w-fit lg:pr-5">
           <p
-            class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400"
+            class="inline-block px-3 py-px mb-4 text-lg font-semibold tracking-wider text-teal-900 bg-teal-accent-400"
           >
-            Hi,
+            HaLLo,
           </p>
           <h2
-            ref="introText"
-            class="mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none"
+            class="mb-5 font-sans text-5xl font-bold tracking-tight text-gray-900 sm:text-5xl sm:leading-none"
           >
             I am
             <span class="inline-block text-deep-purple-accent-400"
@@ -39,7 +39,7 @@
             >
           </h2>
           <h2
-            class="mb-5 font-sans text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl sm:leading-none"
+            class="mb-5 font-sans text-5xl font-semibold tracking-tight text-gray-900 sm:text-5xl sm:leading-none"
           >
             I <span class="mr-2"><em>design</em></span> and
             <span class="mr-2 inline-block text-deep-purple-accent-400"
@@ -51,19 +51,6 @@
               >{{ projects }}</span
             >
           </h2>
-          <div class="flex items-center">
-            <a
-              href="/"
-              class="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-              >Get started</a
-            >
-            <a
-              href="/"
-              aria-label=""
-              class="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700"
-              >Learn more</a
-            >
-          </div>
         </div>
       </div>
     </div>
@@ -81,7 +68,7 @@ const projects = ref("webapp");
 const projectText = ref(null);
 const introText = ref(null);
 
-const words = ["website", "database", "games", "dashboards"];
+const words = ["website", "database", "games", "dashboards", "mobile apps"];
 let wordIndex = 0;
 
 onMounted(() => {

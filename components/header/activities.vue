@@ -2,10 +2,10 @@
   <div
     class="flex flex-col h-screen bg-slate-800 md:flex-row space-y-8 md:space-y-0 md:space-x-8"
   >
-    <div class="absolute flex items-center pointer-events-none what-i-do">
+    <div class="absolute w-full flex items-end pointer-events-none what-i-do">
       <div class="head text-9xl text-slate-700 uppercase">What I do</div>
     </div>
-    <!-- Cube Section -->
+
     <div class="hidden lg:flex flex-1 justify-center items-center cube-section">
       <div class="cont">
         <div class="cube">
@@ -19,7 +19,6 @@
       </div>
     </div>
 
-    <!-- v-for Section -->
     <div class="flex-1 p-8">
       <div v-for="(act, i) in acts" :key="i" class="mb-4 act-item">
         <div
@@ -67,6 +66,7 @@ onMounted(() => {
         end: "bottom top",
         scrub: true,
         reverse: true,
+        markers: true,
       },
     }
   );
@@ -83,6 +83,7 @@ onMounted(() => {
           end: "bottom top+=100",
           scrub: true,
           reverse: true,
+          markers: true,
         },
       }
     );

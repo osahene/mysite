@@ -1,5 +1,5 @@
 <template>
-  <div class="text-gray-600 bg-slate-800 body-font overflow-hidden">
+  <div class="text-gray-600 bg-slate-300 body-font overflow-hidden">
     <div class="absolute flex items-center pointer-events-none cert">
       <div class="head text-9xl text-slate-700 uppercase">Projects</div>
     </div>
@@ -9,13 +9,15 @@
       >
         <img :src="project.image" />
         <div class="card-description">
-          <h1>{{ project.title }}</h1>
+          <h1>
+            <span class="text-2xl font-bold">{{ project.title }}</span>
+          </h1>
           <p>{{ project.para }}</p>
         </div>
       </div>
     </div>
 
-    <!-- <div class="spacer"></div> -->
+    <div class="spacer"></div>
   </div>
 </template>
 
@@ -64,6 +66,7 @@ onMounted(() => {
       },
     }
   );
+
   let cards = gsap.utils.toArray(".card-wrapper");
 
   let stickDistance = 0;
@@ -100,6 +103,15 @@ onMounted(() => {
 </script>
 
 <style scoped>
+/* .cert {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+} */
+
 .card-wrapper {
   display: flex;
   justify-content: center;
@@ -141,6 +153,6 @@ img {
 
 .spacer {
   width: 100%;
-  height: 100vh;
+  height: 10vh;
 }
 </style>

@@ -11,12 +11,10 @@
         <Activities />
       </div>
       <div>
-        <Timeline />
-      </div>
-      <div></div>
-
-      <div>
         <showCase />
+      </div>
+      <div>
+        <Timeline />
       </div>
     </div>
   </div>

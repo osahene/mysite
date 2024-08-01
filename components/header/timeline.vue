@@ -1,10 +1,10 @@
 <template>
-  <section class="text-gray-600 bg-slate-800 body-font overflow-hidden">
+  <section class="text-gray-600 bg-slate-800 p-8 body-font overflow-hidden">
     <div class="absolute flex items-center pointer-events-none cert">
       <div class="head text-9xl text-slate-700 uppercase">Certifications</div>
     </div>
     <div class="container px-5 py-24 mx-auto">
-      <div class="-my-8 divide-y-2 divide-gray-100">
+      <div class="-my-8 p-8 divide-y-2 divide-gray-100">
         <div
           v-for="(article, index) in articles"
           :key="index"
@@ -30,7 +30,7 @@
                 <p class="text-stone-100 leading-relaxed text-2xl">
                   {{ article.content }}
                 </p>
-                <a class="text-indigo-500 inline-flex items-center mt-4">
+                <!-- <a class="text-indigo-500 inline-flex items-center mt-4">
                   Learn More
                   <svg
                     class="w-4 h-4 ml-2"
@@ -44,7 +44,7 @@
                     <path d="M5 12h14"></path>
                     <path d="M12 5l7 7-7 7"></path>
                   </svg>
-                </a>
+                </a> -->
               </div>
             </li>
           </ul>
