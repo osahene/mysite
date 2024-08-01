@@ -8,6 +8,9 @@
         <Nav />
       </div>
       <div>
+        <Skills />
+      </div>
+      <div>
         <Activities />
       </div>
       <div>
