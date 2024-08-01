@@ -1,7 +1,7 @@
 <template>
-  <section class="text-gray-600 bg-slate-300 p-8 body-font overflow-hidden">
+  <section class="text-gray-600 bg-slate-800 p-8 body-font overflow-hidden">
     <div class="absolute flex items-center pointer-events-none cert">
-      <div class="head text-9xl text-slate-700 uppercase">Certifications</div>
+      <div class="head text-9xl text-slate-700 uppercase">Works Done</div>
     </div>
     <div class="container px-5 py-24 mx-auto">
       <div class="-my-8 p-8 divide-y-2 divide-gray-100">
@@ -15,19 +15,19 @@
               <div class="marker"></div>
               <div class="md:w-100 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
                 <span
-                  class="font-semibold text-slate-700 title-font text-2xl text-gray-700"
+                  class="font-semibold text-stone-100 title-font text-2xl text-gray-700"
                 >
                   {{ article.category }}
                 </span>
-                <span class="text-slate-700 mt-1 text-sm">{{
+                <span class="text-stone-100 mt-1 text-sm">{{
                   article.date
                 }}</span>
               </div>
               <div class="md:flex-grow">
-                <h2 class="text-4xl font-medium text-slate-700 title-font mb-2">
+                <h2 class="text-4xl font-medium text-stone-100 title-font mb-2">
                   {{ article.title }}
                 </h2>
-                <p class="text-slate-700 leading-relaxed text-2xl">
+                <p class="text-stone-100 leading-relaxed text-2xl">
                   {{ article.content }}
                 </p>
                 <!-- <a class="text-indigo-500 inline-flex items-center mt-4">
@@ -62,32 +62,32 @@ gsap.registerPlugin(ScrollTrigger);
 
 const articles = ref([
   {
-    category: "Microsoft",
-    date: "July, 2023",
-    title: "Microsoft Certified: Azure Data Scientist Associate",
+    category: "Osahene Tech Lab",
+    date: "January, 2022 - to present",
+    title: "Lead Software Developer",
     content:
-      "Design and prepare a machine learning solution, Explore data and train models, Prepare a model for deployment, Deploy and retrain a model",
+      "A startup company created by myself. So far, I have four projects to my credit.",
   },
   {
-    category: "WorldQuant University",
-    date: "Dec, 2022",
-    title: "Applied Data Science Lab",
+    category: "Temple Christian International School",
+    date: "Jan, 2021 - January, 2024",
+    title: "Modern Language tutor and Administrative Assistant",
     content:
-      "Earners of this badge have completed eight end-to-end, applied data science projects. In each project, they accessed data from files, SQL and NoSQL databases and APIs. They have demonstrated their ability to explore and clean data, create functions and ETL pipelines to prepare training sets. They have built machine learning models for supervised and unsupervised learning tasks, and have created visualizations to explain data characteristics and model predictions for non-technical audiences.",
+      "Taught IGCSE French language and English Literature. I doubled as an administrative assistant, where I developped a management system for generating academic report and transcripts for students.",
   },
   {
-    category: "University of Education, Winneba",
-    date: "Aug, 2017",
-    title: "Master of Education in French",
+    category: "The Church of Pentecost",
+    date: "May, 2018 - Jan, 2021",
+    title: "Head of Statistics Team",
     content:
-      "The Master of Education in French programme is designed to offer higher professional training to teachers of French for the pre-tertiary levels in Ghana. Graduates from the programme are expected to be competent and professionally trained teachers of French.",
+      "Designed and developped Microsoft Excel workbooks for the data collection, data analysis and generating of timely reports.",
   },
   {
-    category: "University of Education, Winneba",
-    date: "Jul, 2013",
-    title: "Bachelor of Arts in French Education",
+    category: "Wioso Senior High School (Alma Mater Education)",
+    date: "Oct, 2015 - Jan, 2021",
+    title: "Modern Language tutor and Headmaster",
     content:
-      "The programme is designed to produce competent and professionally trained teachers who shall be able to teach French at the pre-tertiary levels in Ghana, conduct research, disseminate knowledge and influence policies on French Education in Ghana.",
+      "Taught WASSCE English language, French language and English Literature. I doubled as the headmaster where I saw to the day to day running of the school; schedule academic programs for the students, organize career guidance programs and also developed a school management system for generating academic reports and transcripts.",
   },
 ]);
 
@@ -117,8 +117,8 @@ onMounted(() => {
       x: "0%",
       scrollTrigger: {
         trigger: ".cert",
-        start: "2300vh bottom",
-        end: "2350vh top",
+        start: "1400vh bottom",
+        end: "1450vh top",
         scrub: true,
         reverse: true,
       },

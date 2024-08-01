@@ -66,7 +66,7 @@ onMounted(() => {
         end: "bottom top",
         scrub: true,
         reverse: true,
-        markers: true,
+        // markers: true,
       },
     }
   );
@@ -83,7 +83,7 @@ onMounted(() => {
           end: "bottom top+=100",
           scrub: true,
           reverse: true,
-          markers: true,
+          //markers: true,
         },
       }
     );

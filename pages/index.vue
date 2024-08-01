@@ -14,6 +14,9 @@
         <showCase />
       </div>
       <div>
+        <Experience />
+      </div>
+      <div>
         <Timeline />
       </div>
     </div>
