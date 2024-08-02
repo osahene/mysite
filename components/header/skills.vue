@@ -143,9 +143,12 @@ function marqueAnimation() {
       // convert "x" to "xPercent" to make things responsive, and populate the widths/xPercents Arrays to make lookups faster.
       xPercent: (i, el) => {
         let w = (widths[i] = parseFloat(gsap.getProperty(el, "width", "px")));
+        let computedStyle = window.getComputedStyle(el);
+        let marginRight = parseFloat(computedStyle.marginRight);
         xPercents[i] = snap(
           (parseFloat(gsap.getProperty(el, "x", "px")) / w) * 100 +
-            gsap.getProperty(el, "xPercent")
+            gsap.getProperty(el, "xPercent") +
+            marginRight
         );
         return xPercents[i];
       },
@@ -249,10 +252,5 @@ body {
 
 .marque h1 {
   font-size: 2.8vw;
-}
-
-.marque svg {
-  height: 5vh;
-  width: 5vw;
 }
 </style>
