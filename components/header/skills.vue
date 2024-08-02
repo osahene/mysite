@@ -1,14 +1,27 @@
 <template>
   <div>
-    <div>
-      <div id="page2">
-        <div id="move">
-          <div v-for="(item, i) in skills" :key="i" class="marque">
-            <img class="w-[100px] h-[100px]" :src="item.image" />
-            <h1>{{ item.title }}</h1>
+    <div class="bg-slate-300 pl-8">
+      <h1 class="text-9xl text-slate-400">Skill</h1>
+    </div>
+    <div class="relative overflow-hidden">
+      <div id="page2" class="relative">
+        <div id="move" class="max-w-fit bg-slate-300 flex">
+          <div
+            v-for="(item, i) in skills"
+            :key="i"
+            class="marque flex items-center"
+          >
+            <img class="w-[70px] h-[70px]" :src="item.image" />
+            <h1 class="text-xl ml-2">{{ item.title }}</h1>
           </div>
         </div>
       </div>
+      <div
+        class="absolute inset-y-0 left-0 w-1/5 bg-gradient-to-r from-slate-800 to-transparent pointer-events-none"
+      ></div>
+      <div
+        class="absolute inset-y-0 right-0 w-1/5 bg-gradient-to-l from-slate-800 to-transparent pointer-events-none"
+      ></div>
     </div>
   </div>
 </template>
@@ -29,10 +42,11 @@ const skills = ref([
   { title: "Quasar", image: "/svg/quasar.svg" },
   { title: "SQL", image: "/svg/sql.svg" },
   { title: "Nuxt", image: "/svg/nuxt.svg" },
-  { title: "Postgresql", image: "/svg/postgresql.svg" },
+  { title: "Postgres", image: "/svg/postgresql.svg" },
   { title: "Tailwind", image: "/svg/tailwind.svg" },
   { title: "Tensorflow", image: "/svg/tensorflow.svg" },
   { title: "Javascript", image: "/svg/javascript.svg" },
+  { title: "Python", image: "/svg/python.svg" },
 ]);
 
 function marqueAnimation() {
@@ -54,7 +68,7 @@ function marqueAnimation() {
   let speedTween;
 
   ScrollTrigger.create({
-    trigger: ".marque",
+    trigger: "#move",
     start: "top bottom",
     end: "bottom top",
     onUpdate: (self) => {
@@ -74,7 +88,7 @@ function marqueAnimation() {
           "+=0.5"
         );
     },
-    markers: true,
+    // markers: true,
   });
 
   function horizontalLoop(items, config) {
@@ -196,7 +210,7 @@ body {
 
 #move {
   display: flex;
-  background-color: #d9ff06;
+
   padding: 2vw 0;
   overflow: hidden;
 }
@@ -204,14 +218,10 @@ body {
 .marque {
   display: flex;
   align-items: center;
-  gap: 2vw;
+  gap: 1vw;
   padding: 0 1.5vw;
   flex-shrink: 0;
   text-transform: uppercase;
   transform: translate(-100%);
-}
-
-.marque h1 {
-  font-size: 2.8vw;
 }
 </style>
