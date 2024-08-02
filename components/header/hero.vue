@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="home">
     <div
       class="relative h-full flex flex-col-reverse py-16 lg:pt-0 lg:flex-col lg:pb-0"
     >

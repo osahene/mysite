@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="contact">
     <section class="bg-blue-50 dark:bg-slate-800" id="contact">
       <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div class="mb-4">
@@ -8,9 +8,7 @@
           >
             <p
               class="text-base font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-200"
-            >
-              Contact
-            </p>
+            ></p>
             <h2
               class="font-heading mb-4 font-bold tracking-tight text-gray-900 dark:text-white text-3xl sm:text-5xl"
             >
@@ -19,7 +17,8 @@
             <p
               class="mx-auto mt-4 max-w-3xl text-xl text-gray-600 dark:text-slate-400"
             >
-              In hac habitasse platea dictumst
+              For all your digital projects: personal, organization or
+              institution
             </p>
           </div>
         </div>
@@ -205,7 +204,7 @@
         class="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row"
       >
         <p class="text-sm text-gray-600">
-          © Copyright 2020 Lorem Inc. All rights reserved.
+          © Copyright 2024 Osahene Tech Lab. All rights reserved.
         </p>
         <ul
           class="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row"

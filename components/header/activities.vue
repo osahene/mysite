@@ -1,5 +1,6 @@
 <template>
   <div
+    id="acts"
     class="flex flex-col h-screen bg-slate-800 md:flex-row space-y-8 md:space-y-0 md:space-x-8"
   >
     <div class="absolute w-full flex items-end pointer-events-none what-i-do">

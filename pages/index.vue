@@ -5,7 +5,7 @@
         <Hero />
       </div>
       <div>
-        <Nav />
+        <Navbar />
       </div>
       <div>
         <Skills />

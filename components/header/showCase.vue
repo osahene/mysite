@@ -1,5 +1,5 @@
 <template>
-  <div class="text-gray-300 bg-slate-300 body-font overflow-hidden">
+  <div id="projs" class="text-gray-300 bg-slate-300 body-font overflow-hidden">
     <div class="absolute flex items-center pointer-events-none cert">
       <div class="head text-9xl text-slate-700 uppercase">Projects</div>
     </div>
