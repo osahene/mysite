@@ -32,22 +32,22 @@ const projects = ref([
   {
     title: "Black X Sheets",
     para: "An innovative school management system that leverages on the powers of Google Sheet and Microsoft Excel.",
-    image: "/img/bxs.jpg",
+    image: "/mysite/img/bxs.jpg",
   },
   {
     title: "Clever Bell",
     para: "Supported in the creation of the clever bell project.",
-    image: "/img/bell.jpg",
+    image: "/mysite/img/bell.jpg",
   },
   {
     title: "Aklowa Drum Band",
     para: "A website designed for a global cultural troupe.",
-    image: "/img/aklowalogo.png",
+    image: "/mysite/img/aklowalogo.png",
   },
   {
     title: "Product Authentication Quick Scan",
     para: "Designed and developed the frontend and majority part of the backend.",
-    image: "/img/main-01.svg",
+    image: "/mysite/img/main-01.svg",
   },
 ]);
 

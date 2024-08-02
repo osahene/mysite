@@ -34,19 +34,19 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const skills = ref([
-  { title: "Python", image: "/svg/python.svg" },
-  { title: "Django", image: "/svg/django.svg" },
-  { title: "Excel", image: "/svg/excel.svg" },
-  { title: "Flask", image: "/svg/flask.svg" },
-  { title: "Vue", image: "/svg/vue.svg" },
-  { title: "Quasar", image: "/svg/quasar.svg" },
-  { title: "SQL", image: "/svg/sql.svg" },
-  { title: "Nuxt", image: "/svg/nuxt.svg" },
-  { title: "Postgres", image: "/svg/postgresql.svg" },
-  { title: "Tailwind", image: "/svg/tailwind.svg" },
-  { title: "Tensorflow", image: "/svg/tensorflow.svg" },
-  { title: "Javascript", image: "/svg/javascript.svg" },
-  { title: "Python", image: "/svg/python.svg" },
+  { title: "Python", image: "/mysite/svg/python.svg" },
+  { title: "Django", image: "/mysite/svg/django.svg" },
+  { title: "Excel", image: "/mysite/svg/excel.svg" },
+  { title: "Flask", image: "/mysite/svg/flask.svg" },
+  { title: "Vue", image: "/mysite/svg/vue.svg" },
+  { title: "Quasar", image: "/mysite/svg/quasar.svg" },
+  { title: "SQL", image: "/mysite/svg/sql.svg" },
+  { title: "Nuxt", image: "/mysite/svg/nuxt.svg" },
+  { title: "Postgres", image: "/mysite/svg/postgresql.svg" },
+  { title: "Tailwind", image: "/mysite/svg/tailwind.svg" },
+  { title: "Tensorflow", image: "/mysite/svg/tensorflow.svg" },
+  { title: "Javascript", image: "/mysite/svg/javascript.svg" },
+  { title: "Python", image: "/mysite/svg/python.svg" },
 ]);
 
 function marqueAnimation() {
