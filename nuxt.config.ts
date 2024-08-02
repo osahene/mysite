@@ -2,6 +2,18 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-07-24",
   devtools: { enabled: true },
+  nitro: {
+    preset: "vercel",
+    prerender: {
+      routes: ["/"],
+    },
+  },
+  app: {
+    head: {
+      title: "Dave Personal Webste",
+    },
+    baseURL: "/mysite/",
+  },
   modules: ["@nuxtjs/tailwindcss"],
   ssr: false,
   css: [
