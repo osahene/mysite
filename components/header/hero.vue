@@ -4,7 +4,7 @@
       class="relative h-full flex flex-col-reverse py-16 lg:pt-0 lg:flex-col lg:pb-0"
     >
       <div
-        class="inset-y-0 top-0 right-0 z-0 w-full max-w-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0"
+        class="hidden lg:flex inset-y-0 top-0 right-0 z-0 w-full max-w-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0"
       >
         <svg
           class="absolute left-0 hidden h-full text-white transform -translate-x-1/2 lg:block"

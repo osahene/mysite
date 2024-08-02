@@ -22,6 +22,9 @@
       <div>
         <Timeline />
       </div>
+      <div>
+        <Contact />
+      </div>
     </div>
   </div>
 </template>
