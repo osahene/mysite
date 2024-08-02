@@ -103,20 +103,12 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* .cert {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  pointer-events: none;
-} */
-
 .card-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+  will-change: transform, opacity;
 }
 
 .card-contents {

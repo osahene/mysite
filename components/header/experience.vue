@@ -1,5 +1,7 @@
 <template>
-  <section class="text-gray-600 bg-slate-800 p-8 body-font overflow-hidden">
+  <section
+    class="will-change-transform text-gray-600 bg-slate-800 p-8 body-font overflow-hidden"
+  >
     <div class="absolute flex items-center pointer-events-none cert">
       <div class="head text-9xl text-slate-700 uppercase">Works Done</div>
     </div>
@@ -119,7 +121,6 @@ onMounted(() => {
         trigger: ".cert",
         start: "1400vh bottom",
         end: "1450vh top",
-        scrub: true,
         reverse: true,
       },
     }

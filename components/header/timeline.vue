@@ -119,7 +119,6 @@ onMounted(() => {
         trigger: ".cert",
         start: "2300vh bottom",
         end: "2350vh top",
-        scrub: true,
         reverse: true,
       },
     }

@@ -1,7 +1,7 @@
 <template>
   <div
     id="acts"
-    class="flex flex-col h-screen bg-slate-800 md:flex-row space-y-8 md:space-y-0 md:space-x-8"
+    class="will-change-transform flex flex-col h-screen bg-slate-800 md:flex-row space-y-8 md:space-y-0 md:space-x-8"
   >
     <div class="absolute w-full flex items-end pointer-events-none what-i-do">
       <div class="head text-9xl text-slate-700 uppercase">What I do</div>
@@ -82,7 +82,6 @@ onMounted(() => {
           trigger: item,
           start: "top bottom-=100",
           end: "bottom top+=100",
-          scrub: true,
           reverse: true,
           //markers: true,
         },

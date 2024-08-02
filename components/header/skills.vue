@@ -213,6 +213,7 @@ body {
 
   padding: 2vw 0;
   overflow: hidden;
+  will-change: transform;
 }
 
 .marque {
