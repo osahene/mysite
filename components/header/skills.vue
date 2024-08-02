@@ -21,54 +21,18 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const skills = ref([
-  {
-    title: "Python",
-    image: "/svg/python.svg",
-  },
-  {
-    title: "Django",
-    image: "/svg/django.svg",
-  },
-  {
-    title: "Excel",
-    image: "/svg/excel.svg",
-  },
-  {
-    title: "Flask",
-    image: "/svg/flask.svg",
-  },
-  {
-    title: "Vue",
-    image: "/svg/vue.svg",
-  },
-  {
-    title: "Quasar",
-    image: "/svg/quasar.svg",
-  },
-  {
-    title: "SQL",
-    image: "/svg/sql.svg",
-  },
-  {
-    title: "Nuxt",
-    image: "/svg/nuxt.svg",
-  },
-  {
-    title: "Postgresql",
-    image: "/svg/postgresql.svg",
-  },
-  {
-    title: "Tailwind",
-    image: "/svg/tailwind.svg",
-  },
-  {
-    title: "Tensorflow",
-    image: "/svg/tensorflow.svg",
-  },
-  {
-    title: "Javascript",
-    image: "/svg/javascript.svg",
-  },
+  { title: "Python", image: "/svg/python.svg" },
+  { title: "Django", image: "/svg/django.svg" },
+  { title: "Excel", image: "/svg/excel.svg" },
+  { title: "Flask", image: "/svg/flask.svg" },
+  { title: "Vue", image: "/svg/vue.svg" },
+  { title: "Quasar", image: "/svg/quasar.svg" },
+  { title: "SQL", image: "/svg/sql.svg" },
+  { title: "Nuxt", image: "/svg/nuxt.svg" },
+  { title: "Postgresql", image: "/svg/postgresql.svg" },
+  { title: "Tailwind", image: "/svg/tailwind.svg" },
+  { title: "Tensorflow", image: "/svg/tensorflow.svg" },
+  { title: "Javascript", image: "/svg/javascript.svg" },
 ]);
 
 function marqueAnimation() {
@@ -78,15 +42,14 @@ function marqueAnimation() {
 
   let totalWidth = 0;
   scrollingText.forEach((el) => {
-    totalWidth += el.offsetWidth + parseFloat(getComputedStyle(el).marginRight);
+    const computedStyle = getComputedStyle(el);
+    const marginRight = parseFloat(computedStyle.marginRight);
+    totalWidth += el.offsetWidth + marginRight;
   });
 
-  // Set width of container element
   document.getElementById("move").style.width = `${totalWidth}px`;
 
-  const tl = horizontalLoop(scrollingText, {
-    repeat: -1,
-  });
+  const tl = horizontalLoop(scrollingText, { repeat: -1 });
 
   let speedTween;
 
@@ -132,7 +95,7 @@ function marqueAnimation() {
       curIndex = 0,
       pixelsPerSecond = (config.speed || 1) * 100,
       snap =
-        config.snap === false ? (v) => v : gsap.utils.snap(config.snap || 1), // some browsers shift by a pixel to accommodate flex layouts, so for example if width is 20% the first element's width might be 242px, and the next 243px, alternating back and forth. So we snap to 5 percentage points to make things look more natural
+        config.snap === false ? (v) => v : gsap.utils.snap(config.snap || 1),
       totalWidth,
       curX,
       distanceToStart,
@@ -140,7 +103,6 @@ function marqueAnimation() {
       item,
       i;
     gsap.set(items, {
-      // convert "x" to "xPercent" to make things responsive, and populate the widths/xPercents Arrays to make lookups faster.
       xPercent: (i, el) => {
         let w = (widths[i] = parseFloat(gsap.getProperty(el, "width", "px")));
         let computedStyle = window.getComputedStyle(el);
@@ -196,11 +158,10 @@ function marqueAnimation() {
     function toIndex(index, vars) {
       vars = vars || {};
       Math.abs(index - curIndex) > length / 2 &&
-        (index += index > curIndex ? -length : length); // always go in the shortest direction
+        (index += index > curIndex ? -length : length);
       let newIndex = gsap.utils.wrap(0, length, index),
         time = times[newIndex];
       if (time > tl.time() !== index > curIndex) {
-        // if we're wrapping the timeline's playhead, make the proper adjustments
         vars.modifiers = { time: gsap.utils.wrap(0, tl.duration()) };
         time += tl.duration() * (index > curIndex ? 1 : -1);
       }
@@ -213,7 +174,7 @@ function marqueAnimation() {
     tl.current = () => curIndex;
     tl.toIndex = (index, vars) => toIndex(index, vars);
     tl.times = times;
-    tl.progress(1, true).progress(0, true); // pre-render for performance
+    tl.progress(1, true).progress(0, true);
     if (config.reversed) {
       tl.vars.onReverseComplete();
       tl.reverse();
