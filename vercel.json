@@ -6,8 +6,8 @@
       "config": {
         "zeroConfig": true,
         "framework": "nuxtjs",
-        "buildCommand": "npm generate && mv dist custom-output",
-        "outputDirectory": "custom-output"
+        "buildCommand": "npm generate",
+        "outputDirectory": "dist/"
       }
     }
   ]
