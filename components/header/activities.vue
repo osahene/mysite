@@ -4,7 +4,9 @@
     class="will-change-transform flex flex-col h-screen bg-slate-800 md:flex-row space-y-8 md:space-y-0 md:space-x-8"
   >
     <div class="absolute w-full flex items-end pointer-events-none what-i-do">
-      <div class="head text-9xl text-slate-700 uppercase">What I do</div>
+      <div class="head md:text-9xl text-4xl text-slate-700 uppercase">
+        What I do
+      </div>
     </div>
 
     <div class="hidden lg:flex flex-1 justify-center items-center cube-section">
@@ -20,13 +22,13 @@
       </div>
     </div>
 
-    <div class="flex-1 p-8">
+    <div class="flex-1 p-0 md:p-8">
       <div v-for="(act, i) in acts" :key="i" class="mb-4 act-item">
         <div
           class="p-5 rounded-b-lg before:bg-teal-600 hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0 before:block before:h-[4px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100 flex items-center space-x-4"
         >
           <div class="text-stone-100 num text-2xl font-bold">{{ act.num }}</div>
-          <div class="text-stone-100 content text-4xl">{{ act.cat }}</div>
+          <div class="text-stone-100 content text-3xl">{{ act.cat }}</div>
         </div>
       </div>
     </div>
@@ -58,7 +60,7 @@ const acts = ref([
 onMounted(() => {
   gsap.fromTo(
     ".what-i-do",
-    { x: "100%" },
+    { x: "0%" },
     {
       x: "0%",
       scrollTrigger: {

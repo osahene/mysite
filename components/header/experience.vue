@@ -1,11 +1,19 @@
 <template>
   <section
-    class="will-change-transform text-gray-600 bg-slate-800 p-8 body-font overflow-hidden"
+    class="text-gray-600 bg-slate-800 p-0 md:p-8 body-font overflow-hidden"
   >
-    <div class="absolute flex items-center pointer-events-none cert">
-      <div class="head text-9xl text-slate-700 uppercase">Works Done</div>
+    <!-- Header -->
+    <div class="cert-container">
+      <div
+        class="will-change-transform absolute flex items-center pointer-events-none cert"
+      >
+        <div class="head md:text-9xl text-4xl text-slate-700 uppercase">
+          Works Done
+        </div>
+      </div>
     </div>
-    <div class="container px-5 py-24 mx-auto">
+    <!-- Articles -->
+    <div class="will-change-transform container px-5 py-24 mx-auto">
       <div class="-my-8 p-8 divide-y-2 divide-gray-100">
         <div
           v-for="(article, index) in articles"
@@ -114,7 +122,7 @@ onMounted(() => {
 
   gsap.fromTo(
     ".cert",
-    { x: "100%" },
+    { x: "50%" },
     {
       x: "0%",
       scrollTrigger: {
@@ -133,6 +141,13 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
+.cert {
+  transform: translateX(0);
+}
+
+.cert-container {
+  overflow: hidden;
+}
 li {
   position: relative;
   margin-bottom: 5px;

@@ -68,7 +68,7 @@ const projects = ref("webapp");
 const projectText = ref(null);
 const introText = ref(null);
 
-const words = ["website", "database", "games", "dashboards", "mobile apps"];
+const words = ["website", "database", "games", "dashboards"];
 let wordIndex = 0;
 
 onMounted(() => {

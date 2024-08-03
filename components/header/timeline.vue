@@ -1,7 +1,13 @@
 <template>
-  <section class="text-gray-600 bg-slate-300 p-8 body-font overflow-hidden">
-    <div class="absolute flex items-center pointer-events-none cert">
-      <div class="head text-9xl text-slate-700 uppercase">Certifications</div>
+  <section
+    class="text-gray-600 bg-slate-300 p-0 md:p-8 body-font overflow-hidden"
+  >
+    <div class="cert-container">
+      <div class="absolute flex items-center pointer-events-none cert">
+        <div class="head md:text-9xl text-4xl text-slate-700 uppercase">
+          Certifications
+        </div>
+      </div>
     </div>
     <div class="container px-5 py-24 mx-auto">
       <div class="-my-8 p-8 divide-y-2 divide-gray-100">
@@ -112,7 +118,7 @@ onMounted(() => {
 
   gsap.fromTo(
     ".cert",
-    { x: "100%" },
+    { x: "30%" },
     {
       x: "0%",
       scrollTrigger: {
@@ -131,6 +137,12 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
+.cert-container {
+  overflow: hidden;
+}
+.cert {
+  transform: translateX(0);
+}
 li {
   position: relative;
   margin-bottom: 5px;

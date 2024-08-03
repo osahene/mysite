@@ -16,9 +16,11 @@
       <div>
         <showCase />
       </div>
+      <!-- Causing same trouble as timeline -->
       <div>
         <Experience />
       </div>
+      <!-- Causing trouble -->
       <div>
         <Timeline />
       </div>
@@ -28,4 +30,8 @@
     </div>
   </div>
 </template>
-<script></script>
+<style>
+.main-page {
+  overflow: hidden;
+}
+</style>

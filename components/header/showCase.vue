@@ -1,7 +1,9 @@
 <template>
   <div id="projs" class="text-gray-300 bg-slate-300 body-font overflow-hidden">
-    <div class="absolute flex items-center pointer-events-none cert">
-      <div class="head text-9xl text-slate-700 uppercase">Projects</div>
+    <div class="cert-container">
+      <div class="absolute flex items-center pointer-events-none cert">
+        <div class="head text-4xl text-slate-700 uppercase">Projects</div>
+      </div>
     </div>
     <div v-for="(project, index) in projects" :key="index" class="card-wrapper">
       <div
@@ -54,7 +56,7 @@ const projects = ref([
 onMounted(() => {
   gsap.fromTo(
     ".cert",
-    { x: "100%" },
+    { x: "50%" },
     {
       x: "0%",
       scrollTrigger: {
@@ -103,6 +105,13 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.cert {
+  transform: translateX(0);
+}
+
+.cert-container {
+  overflow: hidden;
+}
 .card-wrapper {
   display: flex;
   justify-content: center;

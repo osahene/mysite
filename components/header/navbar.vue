@@ -11,7 +11,7 @@
 
         <button
           @click="toggleMenu"
-          class="block md:hidden p-2 rounded focus:outline-none focus:ring"
+          class="block md:hidden p-2 mr-2 rounded focus:outline-none focus:ring"
         >
           <svg
             v-if="!isMenuOpen"
@@ -51,6 +51,7 @@
             { hidden: !isMenuOpen, block: isMenuOpen },
             'md:flex',
           ]"
+          class="mr-8"
         >
           <li class="menu-container__menu__item">
             <a class="menu-container__menu__item__link" href="#home">Home</a>
@@ -179,13 +180,14 @@ onMounted(() => {
 
 .menu-container__menu {
   list-style: none;
-  margin: 0;
-  padding: 0;
+  /* margin: 0;
+  padding: 0; */
 }
 
 .menu-container__menu__item {
   margin: 0;
   display: inline-block;
+  padding: 0rem;
 }
 
 .menu-container__menu__item__link {
