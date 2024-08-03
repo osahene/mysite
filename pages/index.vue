@@ -8,7 +8,7 @@
         <Navbar />
       </div>
       <div>
-        <Skills />
+        <Tryskills />
       </div>
       <div>
         <Activities />
