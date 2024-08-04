@@ -129,7 +129,7 @@ onMounted(() => {
         trigger: ".cert",
         start: "1400vh bottom",
         end: "1450vh top",
-        reverse: true,
+        toggleActions: "restart none none reverse",
       },
     }
   );

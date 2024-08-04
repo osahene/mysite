@@ -68,7 +68,7 @@ onMounted(() => {
         start: "top bottom",
         end: "bottom top",
         scrub: true,
-        reverse: true,
+        toggleActions: "restart none none reverse",
         // markers: true,
       },
     }

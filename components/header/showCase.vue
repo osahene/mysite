@@ -2,7 +2,9 @@
   <div id="projs" class="text-gray-300 bg-slate-300 body-font overflow-hidden">
     <div class="cert-container">
       <div class="absolute flex items-center pointer-events-none cert">
-        <div class="head text-4xl text-slate-700 uppercase">Projects</div>
+        <div class="head md:text-9xl text-4xl text-slate-700 uppercase">
+          Projects
+        </div>
       </div>
     </div>
     <div v-for="(project, index) in projects" :key="index" class="card-wrapper">

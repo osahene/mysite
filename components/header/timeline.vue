@@ -118,14 +118,15 @@ onMounted(() => {
 
   gsap.fromTo(
     ".cert",
-    { x: "30%" },
+    { x: "50%" },
     {
       x: "0%",
       scrollTrigger: {
         trigger: ".cert",
-        start: "2300vh bottom",
-        end: "2350vh top",
-        reverse: true,
+        start: "2780vh bottom",
+        end: "2850vh top",
+        toggleActions: "restart none none reverse",
+        // markers: true,
       },
     }
   );
