@@ -1,77 +1,102 @@
-<!-- Navbar.vue -->
 <template>
   <div>
-    <nav :class="['barra-menu', { fixed: isNavFixed }]">
-      <div class="menu-container">
-        <div>
-          <a class="" href="#home">
-            <img class="w-[50px] h-[50px] ml-6" src="/svg/ant.svg" alt="" />
-          </a>
-        </div>
-
+    <nav ref="navbar" class="navbar bg-white border-gray-200 dark:bg-black">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a href="#home" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img
+            src="/svg/ant.svg"
+            class="w-[50px] h-[50px] ml-6"
+            alt="Osahene"
+          />
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+            >Osahene</span
+          >
+        </a>
         <button
           @click="toggleMenu"
-          class="block md:hidden p-2 mr-2 rounded focus:outline-none focus:ring"
+          data-collapse-toggle="navbar-default"
+          type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-default"
+          aria-expanded="false"
         >
+          <span class="sr-only">Open main menu</span>
           <svg
             v-if="!isMenuOpen"
-            class="w-6 h-6 ham"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+            class="w-5 h-5 ham"
+            aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
           >
             <path
+              stroke="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            ></path>
+              d="M1 1h15M1 7h15M1 13h15"
+            />
           </svg>
           <svg
             v-else
-            class="w-6 h-6 cross"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+            class="w-5 h-5 cross"
+            aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
           >
             <path
+              stroke="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
               d="M6 18L18 6M6 6l12 12"
-            ></path>
+            />
           </svg>
         </button>
-
-        <ul
-          :class="[
-            'menu-container__menu',
-            { hidden: !isMenuOpen, block: isMenuOpen },
-            'md:flex',
-          ]"
-          class="mr-8"
+        <div
+          :class="['menu', { hidden: !isMenuOpen, block: isMenuOpen }]"
+          class="w-full shadow-2xl md:block md:w-auto"
+          id="navbar-default"
         >
-          <li class="menu-container__menu__item">
-            <a class="menu-container__menu__item__link" href="#home">Home</a>
-          </li>
-          <li class="menu-container__menu__item">
-            <a class="menu-container__menu__item__link" href="#acts"
-              >Activities</a
-            >
-          </li>
-          <li class="menu-container__menu__item">
-            <a class="menu-container__menu__item__link" href="#projs"
-              >Projects</a
-            >
-          </li>
-          <li class="menu-container__menu__item">
-            <a class="menu-container__menu__item__link" href="#contact"
-              >Contact</a
-            >
-          </li>
-        </ul>
+          <ul
+            class="menu-item font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-slate-400 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-inherit dark:border-gray-700"
+          >
+            <li>
+              <a
+                href="#home"
+                class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-white"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#acts"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >Activities</a
+              >
+            </li>
+            <li>
+              <a
+                href="#projs"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >Projects</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="#contact"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   </div>
@@ -85,7 +110,6 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const isMenuOpen = ref(false);
-const isNavFixed = ref(false);
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
@@ -100,105 +124,56 @@ let tl;
 
 onMounted(() => {
   tl = gsap.timeline({ paused: true });
-  tl.to(".menu-container__menu", {
+  tl.to(".menu", {
     right: 0,
     duration: 0.8,
   });
-  tl.from(".menu-container__menu__item", {
-    x: 150,
+  tl.from(".menu-item", {
+    y: -10,
     duration: 0.7,
     stagger: 0.2,
   });
+
   tl.from(".ham", {
     duration: 0.4,
   });
+  tl.to(
+    ".menu-item",
+    {
+      stagger: 0.2,
+      duration: 0.7,
+    },
+    "<"
+  );
 
-  const nav = document.querySelector(".barra-menu");
+  const navbar = document.querySelector(".navbar");
 
-  gsap.to(nav, {
-    scrollTrigger: {
-      trigger: ".first-page",
-      start: "top top",
-      end: "+=1",
-      onEnter: () => {
-        isNavFixed.value = true;
-        gsap.set(nav, {
-          position: "fixed",
-          top: 0,
-          backgroundColor: "rgb(148, 163, 184)",
-        });
-      },
-      onLeaveBack: () => {
-        isNavFixed.value = false;
-        gsap.set(nav, {
-          position: "relative",
-          backgroundColor: "#fff",
-        });
-      },
+  ScrollTrigger.create({
+    trigger: navbar,
+    start: "top top",
+    end: "+=99999",
+    pin: true,
+    pinSpacing: false,
+    onEnter: () => {
+      gsap.to(navbar, {
+        backgroundColor: "rgb(51, 65, 85)",
+        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+      });
+    },
+    onLeaveBack: () => {
+      gsap.to(navbar, {
+        backgroundColor: "transparent",
+        color: "rgb(51, 65, 85)",
+        boxShadow: "none",
+      });
     },
   });
 });
 </script>
 
 <style scoped>
-.barra-menu {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  left: 0;
-  bottom: 0;
+.navbar {
   width: 100%;
-  margin: 0;
-  padding: 0px;
-  height: 65px;
-  line-height: 61px;
-  background-color: #fff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
   z-index: 10;
-}
-
-.fixed {
-  position: fixed !important;
-  top: 0 !important;
-}
-
-.menu-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.menu-container__logo__link {
-  color: #fff;
-  background: #47525e;
-  padding: 0.1em 0.5em;
-  border-radius: 4px;
-  font-size: 2em;
-}
-
-.menu-container__menu {
-  list-style: none;
-  /* margin: 0;
-  padding: 0; */
-}
-
-.menu-container__menu__item {
-  margin: 0;
-  display: inline-block;
-  padding: 0rem;
-}
-
-.menu-container__menu__item__link {
-  color: #47525e;
-  text-decoration: none;
-  display: block;
-  padding: 0rem 1rem;
-  font-size: 1.6em;
-}
-
-.menu-container__menu__item__link:hover {
-  color: #000;
 }
 </style>
