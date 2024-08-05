@@ -1,5 +1,8 @@
 <template>
-  <div id="projs" class="text-gray-300 bg-slate-300 body-font overflow-hidden">
+  <div
+    id="projs"
+    class="text-gray-300 max-[768px]:w-full max-[768px]:h-full bg-slate-300 body-font overflow-hidden"
+  >
     <div class="cert-container">
       <div class="absolute flex items-center pointer-events-none cert">
         <div
