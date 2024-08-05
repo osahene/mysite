@@ -2,9 +2,9 @@
   <div>
     <div>
       <div class="bg-slate-300 pl-5">
-        <h1 class="text-7xl text-slate-400">Skills</h1>
+        <h1 class="ml-1 mt-4 text-6xl text-slate-400">Skills</h1>
       </div>
-      <div class="overflow-hidden bg-slate-300 p-10">
+      <div class="overflow-hidden bg-slate-300 p-5">
         <div class="flex flex-col gap-6">
           <div class="will flex items-center gap-6">
             <div
@@ -59,12 +59,29 @@
             </div>
           </div>
         </div>
+        <div class="mt-5 justify-around flex">
+          <button
+            @click.prevent="viewSkill"
+            class="px-5 py-2.5 text-sm font-medium text-white bg-slate-400 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-slate-800 dark:hover:bg-slate-500 dark:focus:ring-blue-800"
+          >
+            <span class="text-lg font-bold">View all</span>
+            <span class="ml-4">
+              <font-awesome-icon
+                :icon="['fas', 'arrow-right']"
+                fade
+                size="lg"
+              />
+            </span>
+          </button>
+        </div>
+        <skillComp :card="isDialogOpen" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref, defineAsyncComponent } from "vue";
 const skills = ref([
   {
     title: "Python",
@@ -135,6 +152,17 @@ const skillset = ref([
   },
   { title: "Jupyter", image: "/mysite/svg/jupyter.svg" },
 ]);
+const isDialogOpen = ref(false);
+
+const skillComp = defineAsyncComponent(() =>
+  import("@/components/header/skillsModal.vue")
+);
+
+const viewSkill = () => {
+  isDialogOpen.value = true;
+  console.log("dialog", isDialogOpen);
+  console.log("dialog", isDialogOpen.value);
+};
 </script>
 
 <style scoped>
