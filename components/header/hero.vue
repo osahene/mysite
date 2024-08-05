@@ -23,7 +23,7 @@
       <!-- Text -->
       <div
         ref="introText"
-        class="relative flex flex-col items-start max-[768px]:items-center max-[768px]:justify-center max-[768px]:text-center max-[768px]:h-full w-full max-w-xl px-4 mx-5 md:px-0 lg:px-8 lg:max-w-screen-xl"
+        class="relative flex flex-col items-start max-[768px]:items-center max-[768px]:justify-center max-[768px]:h-full w-full max-w-xl px-4 mx-5 md:px-0 lg:px-8 lg:max-w-screen-xl"
       >
         <div class="mb-16 lg:my-40 lg:max-w-fit lg:pr-5">
           <p
