@@ -8,7 +8,7 @@
         class="will-change-transform absolute flex items-center pointer-events-none cert"
       >
         <div
-          class="head md:text-9xl ml-1 mt-4 text-6xl text-slate-700 uppercase"
+          class="head md:text-9xl ml-1 mt-4 text-4xl text-slate-700 uppercase"
         >
           Works Done
         </div>
@@ -124,7 +124,7 @@ onMounted(() => {
 
   gsap.fromTo(
     ".cert",
-    { x: "50%" },
+    { x: "0%" },
     {
       x: "0%",
       scrollTrigger: {

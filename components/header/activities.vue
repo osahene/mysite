@@ -3,7 +3,7 @@
     id="acts"
     class="will-change-transform flex flex-col h-screen bg-slate-800 md:flex-row space-y-8 md:space-y-0 md:space-x-8 overflow-y-auto"
   >
-    <div class="absolute w-full flex items-end pointer-events-none what-i-do">
+    <div class="w-full flex items-end pointer-events-none what-i-do">
       <div class="head md:text-9xl ml-1 mt-4 text-4xl text-slate-700 uppercase">
         What I do
       </div>
