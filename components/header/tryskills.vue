@@ -74,7 +74,7 @@
             </span>
           </button>
         </div>
-        <skillComp :card="isDialogOpen" />
+        <skillComp :card="isDialogOpen" @update:card="isDialogOpen = $event" />
       </div>
     </div>
   </div>
