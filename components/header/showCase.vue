@@ -6,7 +6,7 @@
     <div class="cert-container">
       <div class="absolute flex items-center pointer-events-none cert">
         <div
-          class="head md:text-9xl ml-1 mt-4 text-6xl text-slate-700 uppercase"
+          class="head md:text-9xl ml-1 mt-4 text-4xl text-slate-700 uppercase"
         >
           Projects
         </div>
