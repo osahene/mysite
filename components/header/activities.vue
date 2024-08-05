@@ -1,10 +1,10 @@
 <template>
   <div
     id="acts"
-    class="will-change-transform flex flex-col h-screen bg-slate-800 md:flex-row space-y-8 md:space-y-0 md:space-x-8"
+    class="will-change-transform flex flex-col h-screen bg-slate-800 md:flex-row space-y-8 md:space-y-0 md:space-x-8 overflow-y-auto"
   >
     <div class="absolute w-full flex items-end pointer-events-none what-i-do">
-      <div class="head md:text-9xl text-4xl text-slate-700 uppercase">
+      <div class="head md:text-9xl ml-1 mt-4 text-4xl text-slate-700 uppercase">
         What I do
       </div>
     </div>
@@ -44,15 +44,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 const acts = ref([
   {
-    num: "1",
+    num: "1/",
     cat: "Actualizing the thought provoking website or web application with vue and python (django and flask)",
   },
   {
-    num: "2",
+    num: "2/",
     cat: "Delivering data analytical works based on the budget at hand. I develop data analytics dashboards and reports with PowerBI, Microsoft Excel or Google Sheets. These power tools make life easy ",
   },
   {
-    num: "3",
+    num: "3/",
     cat: "Starting a new series on automobiles. ",
   },
 ]);

@@ -4,13 +4,15 @@
   >
     <div class="cert-container">
       <div class="absolute flex items-center pointer-events-none cert">
-        <div class="head md:text-9xl text-4xl text-slate-700 uppercase">
-          Certifications
+        <div
+          class="head md:text-9xl ml-1 mt-4 text-5xl text-slate-700 uppercase"
+        >
+          Education
         </div>
       </div>
     </div>
     <div class="container px-5 py-24 mx-auto">
-      <div class="-my-8 p-8 divide-y-2 divide-gray-100">
+      <div class="-my-8 divide-y-2 divide-gray-100">
         <div
           v-for="(article, index) in articles"
           :key="index"
@@ -148,7 +150,7 @@ li {
   position: relative;
   margin-bottom: 5px;
   padding-bottom: 2.5em;
-  padding-left: 3rem;
+  padding-left: 1.5rem;
 }
 
 li:last-child {
@@ -177,7 +179,7 @@ li:last-child {
 .marker:after {
   content: "";
   width: 3px;
-  background: #ccd5db;
+  background: #0f88d8;
   display: block;
   position: absolute;
   top: 24px;

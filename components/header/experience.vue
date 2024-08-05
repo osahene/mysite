@@ -7,14 +7,16 @@
       <div
         class="will-change-transform absolute flex items-center pointer-events-none cert"
       >
-        <div class="head md:text-9xl text-4xl text-slate-700 uppercase">
+        <div
+          class="head md:text-9xl ml-1 mt-4 text-6xl text-slate-700 uppercase"
+        >
           Works Done
         </div>
       </div>
     </div>
     <!-- Articles -->
     <div class="will-change-transform container px-5 py-24 mx-auto">
-      <div class="-my-8 p-8 divide-y-2 divide-gray-100">
+      <div class="-my-8 divide-y-2 divide-gray-100">
         <div
           v-for="(article, index) in articles"
           :key="index"
@@ -152,7 +154,7 @@ li {
   position: relative;
   margin-bottom: 5px;
   padding-bottom: 2.5em;
-  padding-left: 3rem;
+  padding-left: 1.5rem;
 }
 
 li:last-child {

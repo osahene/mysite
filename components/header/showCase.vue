@@ -2,7 +2,9 @@
   <div id="projs" class="text-gray-300 bg-slate-300 body-font overflow-hidden">
     <div class="cert-container">
       <div class="absolute flex items-center pointer-events-none cert">
-        <div class="head md:text-9xl text-4xl text-slate-700 uppercase">
+        <div
+          class="head md:text-9xl ml-1 mt-4 text-6xl text-slate-700 uppercase"
+        >
           Projects
         </div>
       </div>
@@ -118,7 +120,7 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 60px;
   will-change: transform, opacity;
 }
 
