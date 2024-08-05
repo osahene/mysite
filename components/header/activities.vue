@@ -22,7 +22,9 @@
       </div>
     </div>
 
-    <div class="flex-1 p-0 md:p-8">
+    <div
+      class="flex-1 p-0 md:p-8 max-[768px]:w-full max-[768px]:h-full max-[768px]:overflow-hidden"
+    >
       <div v-for="(act, i) in acts" :key="i" class="mb-4 act-item">
         <div
           class="p-5 rounded-b-lg before:bg-teal-600 hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0 before:block before:h-[4px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100 flex items-center space-x-4"
